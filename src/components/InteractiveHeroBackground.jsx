@@ -14,7 +14,7 @@ const InteractiveHeroBackground = () => {
 
     const celestialBodies = [];
     const stars = [];
-    const mouse = { x: null, y: null, targetX: null, targetY: null, radius: 180 };
+    const mouse = { x: null, y: null, targetX: null, targetY: null, radius: 350 };
 
     // Handle Resize
     const handleResize = () => {
@@ -105,15 +105,15 @@ const InteractiveHeroBackground = () => {
 
           if (dist < mouse.radius) {
             const pull = (mouse.radius - dist) / mouse.radius;
-            this.offsetX += (dx * pull * 0.08 - this.offsetX) * 0.05;
-            this.offsetY += (dy * pull * 0.08 - this.offsetY) * 0.05;
+            this.offsetX += (dx * pull * 0.3 - this.offsetX) * 0.15;
+            this.offsetY += (dy * pull * 0.3 - this.offsetY) * 0.15;
           } else {
-            this.offsetX += (0 - this.offsetX) * 0.05;
-            this.offsetY += (0 - this.offsetY) * 0.05;
+            this.offsetX += (0 - this.offsetX) * 0.1;
+            this.offsetY += (0 - this.offsetY) * 0.1;
           }
         } else {
-          this.offsetX += (0 - this.offsetX) * 0.05;
-          this.offsetY += (0 - this.offsetY) * 0.05;
+          this.offsetX += (0 - this.offsetX) * 0.1;
+          this.offsetY += (0 - this.offsetY) * 0.1;
         }
       }
 
@@ -399,8 +399,8 @@ const InteractiveHeroBackground = () => {
           mouse.x = mouse.targetX;
           mouse.y = mouse.targetY;
         } else {
-          mouse.x += (mouse.targetX - mouse.x) * 0.1;
-          mouse.y += (mouse.targetY - mouse.y) * 0.1;
+          mouse.x += (mouse.targetX - mouse.x) * 0.4;
+          mouse.y += (mouse.targetY - mouse.y) * 0.4;
         }
       } else {
         mouse.x = null;
