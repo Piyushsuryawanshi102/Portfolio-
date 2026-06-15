@@ -112,6 +112,7 @@ body {
   scroll-behavior: smooth;
   overflow-x: hidden;
   font-family: var(--font-amiamie);
+  zoom: 0.9;
 }
 
 @utility clip-path {

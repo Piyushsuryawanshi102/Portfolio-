@@ -9,11 +9,9 @@ const ContactSummary = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      // Set globe size to the window height. 
-      // Since it's translated down by 50%, its visible radius will be exactly 50% of the window height!
-      // We take max with window.innerWidth to ensure it's wide enough on wide screens, 
-      // but multiply innerWidth by a factor so it looks like a nice large arc.
-      const optimalSize = Math.max(window.innerHeight, window.innerWidth * 0.8);
+      // Make globe large enough to form a wide arc across the bottom
+      // Use max of viewport height and width to ensure coverage
+      const optimalSize = Math.max(window.innerHeight * 1.2, window.innerWidth * 0.9);
       setGlobeSize(optimalSize);
     };
 
@@ -43,15 +41,25 @@ const ContactSummary = () => {
     >
       <div className="font-light text-center contact-text-responsive z-10 mb-32">
         <p>
-          “ Let’s build a <br />
+          &ldquo; Let&rsquo;s build a <br />
           <span className="font-normal">memorable</span> &{" "}
           <span className="italic">inspiring</span> <br />
-          web application <span className="text-gold">together</span> “
+          web application <span className="text-gold">together</span> &rdquo;
         </p>
       </div>
       
-      {/* Globe is absolutely positioned at the bottom, translating down by 50% so only top half is visible */}
-      <div className="absolute bottom-0 translate-y-[45%] flex justify-center w-full z-0">
+      {/* Globe positioned at the very bottom, showing the top ~55% of the globe */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: "50%",
+          transform: "translateX(-50%) translateY(50%)",
+          width: globeSize,
+          height: globeSize,
+          zIndex: 0,
+        }}
+      >
         <DottedGlobe size={globeSize} />
       </div>
     </section>
@@ -59,4 +67,3 @@ const ContactSummary = () => {
 };
 
 export default ContactSummary;
-

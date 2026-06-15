@@ -175,7 +175,7 @@ const Resume = () => {
 
             <div className="flex flex-col gap-3 mt-6">
               <a
-                href="/resume/Piyush resume pdf.pdf"
+                href="/resume/Piyush_SDE%20-%20Copy.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center justify-center gap-2 py-3.5 px-4 rounded-2xl bg-black text-white hover:bg-gold hover:text-black transition-colors duration-300 font-normal shadow-md"
@@ -184,7 +184,7 @@ const Resume = () => {
                 View Full Resume
               </a>
               <a
-                href="/resume/Piyush resume pdf.pdf"
+                href="/resume/Piyush_SDE%20-%20Copy.pdf"
                 download="Piyush_Suryawanshi_Resume.pdf"
                 className="flex items-center justify-center gap-2 py-3.5 px-4 rounded-2xl border border-black/30 hover:border-black bg-transparent text-black hover:bg-black/5 transition-all duration-300 font-normal"
               >
